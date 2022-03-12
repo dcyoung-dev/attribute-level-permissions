@@ -1,0 +1,12 @@
+<ul>
+  <% @people.each do |person| %>
+    <li>
+      <p><%= person.first_name %></p>
+      <p>
+        <% if policy(person.passport_number).show? %>
+          Passport Number: <%= person.passport_number %>
+        <% end %>
+      </p>
+    </li>
+  <% end %>
+</ul>
